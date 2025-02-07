@@ -5,6 +5,7 @@ import { ToastContainer, toast, Bounce } from "react-toastify";
 
 function AppState(props) {
   const url = "http://localhost:3000/api";
+  // const url = "https://mern-e-commerce-1-123x.onrender.com/";
   const [products, setProducts] = useState([]);
   const [token, setToken] = useState("");
   const [isAuthenticated, setIsAuthenticated] = useState(false);

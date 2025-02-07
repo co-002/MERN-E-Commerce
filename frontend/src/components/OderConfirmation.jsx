@@ -9,7 +9,6 @@ function OderConfirmation() {
       setLatestOrder(userOrder.orders);
     }
   }, [userOrder]);
-  console.log(latestOrder);
   return (
     <>
       <div className="container section-padding">

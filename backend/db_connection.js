@@ -8,7 +8,7 @@ const connectDb = async () => {
         dbName: "MERN_E-Commerce",
       }
     );
-    console.log("Mongodb is connected successfully");
+    // console.log("Mongodb is connected successfully");
   } catch (error) {
     console.error(error);
   }

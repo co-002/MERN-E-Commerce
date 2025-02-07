@@ -14,7 +14,6 @@ function Navbar() {
   const [searchTerm, setSearchTerm] = useState("");
   const { setFilteredData, products, logout, isAuthenticated, cart } =
     useContext(AppContext);
-  // console.log('user: ',cart);
   const navigate = useNavigate();
   const location = useLocation();
 

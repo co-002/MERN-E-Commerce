@@ -6,6 +6,7 @@ import cartRouter from "./routes/cart.js"
 import addressRouter from "./routes/address.js"
 import paymentRouter from "./routes/payment.js"
 import cors from "cors"
+import path from "path";
 
 const port = 3000;
 const app = express();
@@ -18,6 +19,7 @@ app.use(cors({
   credentials: true
 }))
 app.use(express.urlencoded({extended: true}))
+const _dirname = path.resolve();
 
 // Calling database connection method
 connectDb();
@@ -37,6 +39,11 @@ app.use("/api/address", addressRouter)
 // Payment router
 app.use("/api/payment", paymentRouter)
 
+app.use(express.static(path.join(_dirname, "/frontend/dist")));
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(_dirname, "frontend", "dist", "index.html"))
+})
+
 app.listen(port, () => {
-  console.log("Server is running on port " + port);
+  // console.log("Server is running on port " + port);
 });
